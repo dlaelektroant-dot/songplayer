@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Antkownia Player</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #111;
+    color: white;
+    display: flex;
+}
+
+#sidebar {
+    width: 260px;
+    background: #1b1b1b;
+    height: 100vh;
+    padding: 10px;
+}
+
+.song {
+    padding: 10px;
+    margin: 6px 0;
+    background: #333;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.song:hover {
+    background: #555;
+}
+
+#main {
+    flex: 1;
+    padding: 20px;
+}
+
+audio {
+    width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<div id="sidebar">
+    <h2>🎵 Playlista</h2>
+
+    <div class="song" onclick="play('music/song1.mp3')">Song 1</div>
+    <div class="song" onclick="play('music/song2.mp3')">Song 2</div>
+
+</div>
+
+<div id="main">
+    <h1>Player</h1>
+    <audio id="player" controls></audio>
+</div>
+
+<script>
+const player = document.getElementById("player");
+
+function play(src) {
+    player.src = src;
+    player.play();
+}
+</script>
+
+</body>
+</html>
