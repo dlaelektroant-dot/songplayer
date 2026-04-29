@@ -1,71 +1,42 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>MIX player</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #111;
-    color: white;
-    display: flex;
-}
-
-#sidebar {
-    width: 260px;
-    background: #1b1b1b;
-    height: 100vh;
-    padding: 10px;
-}
-
-.song {
-    padding: 10px;
-    margin: 6px 0;
-    background: #333;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.song:hover {
-    background: #555;
-}
-
-#main {
-    flex: 1;
-    padding: 20px;
-}
-
-audio {
-    width: 100%;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        .player {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            color: #333;
+        }
+        audio {
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
-
-<div id="sidebar">
-    <h2>Playlista</h2>
-
-    <div class="song" onclick="play('wiosna26v1.wav')">Song 1</div>
-    <div class="song" onclick="play('music/song2.mp3')">Song 2</div>
-
-</div>
-
-<div id="main">
-    <h1>Player</h1>
-    <audio id="player" controls></audio>
-</div>
-
-<script>
-const player = document.getElementById("player");
-
-function play(src) {
-    player.src = src;
-    player.play();
-}
-</script>
-
+    <div class="player">
+        <h1>🎵 Song Player</h1>
+        <audio controls>
+            <source src="https://ia601406.us.archive.org/29/items/wiosna26v1/wiosna26v1.wav" type="audio/wav">
+            Twoja przeglądarka nie obsługuje odtwarzacza audio.
+        </audio>
+    </div>
 </body>
 </html>
